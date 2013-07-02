@@ -38,7 +38,12 @@ end
 
 group :development do
   gem 'guard-rspec'
+  gem 'guard-spork'
 end
+
+# Prevents spork from exiting due to non-existent class in rails4.
+# Can be removed once this issue is fixed https://github.com/sporkrb/spork/issues/223
+gem 'rails-observers', require: 'rails/observers/active_model/observing'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
